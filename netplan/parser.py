@@ -80,6 +80,7 @@ class Parser(object):
         "ethernets": npiface.EthernetInterface,
         "vlans": npiface.VLANInterface,
         "wifis": npiface.WirelessInterface,
+        "renderer": npiface.RendererInterface,
     }
 
     def __init__(self, dirs=NETPLAN_DIRS):

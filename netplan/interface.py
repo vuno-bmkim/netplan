@@ -163,3 +163,19 @@ class VLANInterface(Interface):
         """
         link = self.get("link")
         return [link] if link is not None else []
+
+
+class RendererInterface(Interface):
+    """
+    A netplan definition for a renderer interface.
+    """
+
+    # TODO: add the additional schema fields.
+    def get_parent_names(self):
+        # type: (RendererInterface) -> List[str]
+        """
+        Return the names of any parent interfaces that should be
+        examined in addition to this one.
+        For a renderer interface, this is the list of the members.
+        """
+        return cast(List[str], self.get("interfaces", []))
